@@ -99,35 +99,34 @@ BOARD_HAS_MTK_HARDWARE := true
 
 
 #Save space
-# TW_EXCLUDE_ENCRYPTED_BACKUPS := true
-# TW_EXCLUDE_APP_MANAGER := true
+TW_EXCLUDE_ENCRYPTED_BACKUPS := true
+TW_EXCLUDE_APP_MANAGER := true
 # BOARD_HAS_NO_REAL_SDCARD := true # disables things like sdcard partitioning and may save you some space if TWRP isn't fitting in your recovery partition (for system-as-root?)
 #TW_NO_EXFAT_FUSE := true
 # TARGET_BOOTANIMATION_TEXTURE_CACHE := false
 # TARGET_BOOTANIMATION_USE_RGB565 := true
 # TW_NO_SCREEN_TIMEOUT := true
-# TW_EXTRA_LANGUAGES := false
+TW_EXTRA_LANGUAGES := false
 # TW_NO_FLASH_SPARK := true
 # # To remove later
 # TW_EXCLUDE_EXFAT := true
 # TW_EXCLUDE_FONTS := true 
 # TW_EXCLUDE_NTFS := true
 # TW_NO_SDEXT_PARTITION := true
-# TW_NO_SCREEN_BLANK := true
+TW_NO_SCREEN_BLANK := true
 # TW_NO_USB_STORAGE := true
-# TW_EXCLUDE_EMOJI := true
+TW_EXCLUDE_EMOJI := true
 # TW_USE_COMPRESSION := false
 # TW_EXCLUDE_MTP := true
 # TW_EXCLUDE_SUPERSU := true
-# TW_NO_USB_STORAGE := true
 # TW_NO_BATT_PERCENT := true
 # TW_INCLUDE_DUMLOCK := true #?
 # TW_NO_CPU_TEMP := true
-# TW_NO_HAPTICS := true
+TW_NO_HAPTICS := true
 # TW_USE_MINUI := true
-# TW_EXCLUDE_NANO := true
-# TW_EXCLUDE_BASH := true
-# TW_EXCLUDE_PYTHON := true
+TW_EXCLUDE_NANO := true
+TW_EXCLUDE_BASH := true
+TW_EXCLUDE_PYTHON := true
 # TW_EXCLUDE_TZDATA := true
 # TW_EXCLUDE_TWRPAPP := true
 # TW_NO_SCREEN_BLANK := true
