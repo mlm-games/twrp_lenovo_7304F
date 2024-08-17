@@ -5,8 +5,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# Inherit from those products. Most specific first.
+# Inherit from those products. Most specific first., Including the second one causes fast bootloop
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+# $(call inherit-product, $(SRC_TARGET_DIR)/product/embedded.mk)
 
 # Causes the fast bootloop problem
 # $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
