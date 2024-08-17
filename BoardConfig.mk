@@ -44,20 +44,20 @@ BOARD_RAMDISK_OFFSET := 0x03f88000
 BOARD_KERNEL_TAGS_OFFSET := 0x0df88000
 BOARD_MKBOOTIMG_ARGS += --ramdisk_offset $(BOARD_RAMDISK_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
-BOARD_KERNEL_IMAGE_NAME := Image
-TARGET_KERNEL_CONFIG := 7304F_defconfig
-TARGET_KERNEL_SOURCE := kernel/lenovo/7304F
+# BOARD_KERNEL_IMAGE_NAME := Image
+# TARGET_KERNEL_CONFIG := 7304F_defconfig
+# TARGET_KERNEL_SOURCE := kernel/lenovo/7304F
 
 # Kernel - prebuilt
-TARGET_FORCE_PREBUILT_KERNEL := true
-ifeq ($(TARGET_FORCE_PREBUILT_KERNEL),true)
+# ARGET_FORCE_PREBUILT_KERNEL := true
+# ifeq ($(TARGET_FORCE_PREBUILT_KERNEL),true)
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
-endif
+# endif
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 BOARD_BOOTIMAGE_PARTITION_SIZE := 11088784
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16406528
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16777216
 BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_SYSTEMIMAGE_PARTITION_TYPE := ext4
 BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := ext4
@@ -66,6 +66,7 @@ TARGET_COPY_OUT_VENDOR := vendor
 
 # Platform
 TARGET_BOARD_PLATFORM := mt8167
+
 
 # Recovery
 TARGET_USERIMAGES_USE_EXT4 := true
@@ -86,17 +87,28 @@ TW_SCREEN_BLANK_ON_BOOT := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
 
+TARGET_IS_64_BIT := true 
+TW_INCLUDE_FUSE_EXFAT := true  
+TARGET_BOARD_SUFFIX := _64                    # Remove if the device is 32-bit
+TARGET_USES_64_BIT_BINDER := true             # Remove if the device is 32-bit
+
+# These two are for MTK Chipsets only
+BOARD_USES_MTK_HARDWARE := true
+BOARD_HAS_MTK_HARDWARE := true
+
+
+
 #Save space
-TW_EXCLUDE_ENCRYPTED_BACKUPS := true
-TW_EXCLUDE_APP_MANAGER := true
-BOARD_HAS_NO_REAL_SDCARD := true # disables things like sdcard partitioning and may save you some space if TWRP isn't fitting in your recovery partition (for system-as-root?)
-TW_NO_EXFAT_FUSE := true
-TARGET_BOOTANIMATION_TEXTURE_CACHE := false
-TARGET_BOOTANIMATION_USE_RGB565 := true
-TW_NO_SCREEN_TIMEOUT := true
-TW_EXTRA_LANGUAGES := false
-TW_NO_FLASH_SPARK := true
-#To remove later
+# TW_EXCLUDE_ENCRYPTED_BACKUPS := true
+# TW_EXCLUDE_APP_MANAGER := true
+# BOARD_HAS_NO_REAL_SDCARD := true # disables things like sdcard partitioning and may save you some space if TWRP isn't fitting in your recovery partition (for system-as-root?)
+#TW_NO_EXFAT_FUSE := true
+# TARGET_BOOTANIMATION_TEXTURE_CACHE := false
+# TARGET_BOOTANIMATION_USE_RGB565 := true
+# TW_NO_SCREEN_TIMEOUT := true
+# TW_EXTRA_LANGUAGES := false
+# TW_NO_FLASH_SPARK := true
+# # To remove later
 # TW_EXCLUDE_EXFAT := true
 # TW_EXCLUDE_FONTS := true 
 # TW_EXCLUDE_NTFS := true
