@@ -6,6 +6,7 @@
 # 
 
 # It is not system-as-root
+# lun file location - /sys/bus/i2c/devices/i2c-0/device/driver/1100b000.i2c/subsystem/devices/soc/1000f000.pwrap/1000f000.pwrap:mt6392/mt6392-regulator/regulator/regulator.4/subsystem/regulator.14/musb-hdrc.0.auto-vusb/gadget/lun0/file
 
 DEVICE_PATH := device/lenovo/7304F
 
@@ -148,7 +149,7 @@ TW_USE_TOOLBOX := true
 
 
 # Properties
-TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
+# TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop # Causes a error in android-11
 
 # Trial
 
