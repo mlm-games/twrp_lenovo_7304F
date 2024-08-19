@@ -4,7 +4,7 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 #
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
+# $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 # Inherit from those products. Most specific first., Including the second one causes fast bootloop
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 # $(call inherit-product, $(SRC_TARGET_DIR)/product/embedded.mk)
@@ -16,7 +16,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, vendor/omni/config/common.mk)
 
 # Inherit from 7304F device
-$(call inherit-product, device/lenovo/7304F/device.mk)
+# $(call inherit-product, device/lenovo/7304F/device.mk)
 
 PRODUCT_DEVICE := 7304F
 PRODUCT_NAME := omni_7304F
