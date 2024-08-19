@@ -27,6 +27,16 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := generic
 TARGET_2ND_CPU_VARIANT_RUNTIME := generic
 
+
+TARGET_IS_64_BIT := true 
+TW_INCLUDE_FUSE_EXFAT := true  
+TARGET_BOARD_SUFFIX := _64                    # Remove if the device is 32-bit
+TARGET_USES_64_BIT_BINDER := true             # Remove if the device is 32-bit
+
+# These two are for MTK Chipsets only
+BOARD_USES_MTK_HARDWARE := true
+BOARD_HAS_MTK_HARDWARE := true
+
 # APEX
 OVERRIDE_TARGET_FLATTEN_APEX := true
 
@@ -47,12 +57,17 @@ BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 # BOARD_KERNEL_IMAGE_NAME := Image
 # TARGET_KERNEL_CONFIG := 7304F_defconfig
 # TARGET_KERNEL_SOURCE := kernel/lenovo/7304F
+TARGET_CPU_ABI_LIST_64_BIT := $(TARGET_CPU_ABI)
+TARGET_CPU_ABI_LIST_32_BIT := $(TARGET_2ND_CPU_ABI),$(TARGET_2ND_CPU_ABI2)
+TARGET_CPU_ABI_LIST := $(TARGET_CPU_ABI_LIST_64_BIT),$(TARGET_CPU_ABI_LIST_32_BIT)
 
 # Kernel - prebuilt
 # ARGET_FORCE_PREBUILT_KERNEL := true
 # ifeq ($(TARGET_FORCE_PREBUILT_KERNEL),true)
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
 # endif
+
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery.fstab
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
@@ -66,7 +81,8 @@ TARGET_COPY_OUT_VENDOR := vendor
 
 # Platform
 TARGET_BOARD_PLATFORM := mt8167
-
+TARGET_NO_BOOTLOADER := true
+TARGET_BOOTLOADER_BOARD_NAME :=      # ro.product.board doesnt have a value...
 
 # Recovery
 TARGET_USERIMAGES_USE_EXT4 := true
@@ -82,63 +98,55 @@ PLATFORM_VERSION := 16.1.0
 
 # TWRP Configuration
 TW_THEME := portrait_hdpi
-TW_EXTRA_LANGUAGES := true
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
-TW_USE_TOOLBOX := true
+# TW_USE_TOOLBOX := true
 
-TARGET_IS_64_BIT := true 
-TW_INCLUDE_FUSE_EXFAT := true  
-TARGET_BOARD_SUFFIX := _64                    # Remove if the device is 32-bit
-TARGET_USES_64_BIT_BINDER := true             # Remove if the device is 32-bit
+# #Save space
+# TW_EXCLUDE_ENCRYPTED_BACKUPS := true
+# TW_EXCLUDE_APP_MANAGER := true
+# # BOARD_HAS_NO_REAL_SDCARD := true # disables things like sdcard partitioning and may save you some space if TWRP isn't fitting in your recovery partition (for system-as-root?)
+# #TW_NO_EXFAT_FUSE := true
+# TARGET_BOOTANIMATION_TEXTURE_CACHE := false
+# TARGET_BOOTANIMATION_USE_RGB565 := true
+# TW_NO_SCREEN_TIMEOUT := true
+# TW_EXTRA_LANGUAGES := false
+# # TW_NO_FLASH_SPARK := true
+# # # To remove later
+# # TW_EXCLUDE_EXFAT := true
+# # TW_EXCLUDE_NTFS := true
+# # TW_NO_SDEXT_PARTITION := true
+# TW_NO_SCREEN_BLANK := true
+# TW_NO_USB_STORAGE := true
+# TW_EXCLUDE_EMOJI := true
+# TW_USE_COMPRESSION := false
+# # TW_EXCLUDE_MTP := true
+# TW_EXCLUDE_SUPERSU := true
+# TW_NO_BATT_PERCENT := true
+# # TW_INCLUDE_DUMLOCK := true #?
+# TW_NO_CPU_TEMP := true
+# TW_NO_HAPTICS := true
+# TW_USE_MINUI := true
+# TW_EXCLUDE_PYTHON := true
+# TW_EXCLUDE_LPTOOLS := true
+# TW_EXCLUDE_LPDUMP := true
+# TW_EXCLUDE_NANO := true
+# TW_EXCLUDE_BASH := true
+# TW_EXCLUDE_PYTHON := true
+# TW_EXCLUDE_TZDATA := true
+# TW_EXCLUDE_TWRPAPP := true
+# # TW_DISABLE_ADB := true
+# # TW_DISABLE_FASTBOOT := true
+# # TW_EXCLUDE_FILEMANAGER := true
+# TW_EXCLUDE_TERMINAL := true
+# # TW_EXCLUDE_PARTITIONMANAGER := true
+# # LOCAL_STRIP_MODULE := true
 
-# These two are for MTK Chipsets only
-BOARD_USES_MTK_HARDWARE := true
-BOARD_HAS_MTK_HARDWARE := true
+# # Encryption remove (default?)
+# TW_INCLUDE_CRYPTO := false
+# TW_EXCLUDE_CRYPTO := true
+# TW_EXCLUDE_FBE := true
 
 
-
-#Save space
-TW_EXCLUDE_ENCRYPTED_BACKUPS := true
-TW_EXCLUDE_APP_MANAGER := true
-# BOARD_HAS_NO_REAL_SDCARD := true # disables things like sdcard partitioning and may save you some space if TWRP isn't fitting in your recovery partition (for system-as-root?)
-#TW_NO_EXFAT_FUSE := true
-TARGET_BOOTANIMATION_TEXTURE_CACHE := false
-TARGET_BOOTANIMATION_USE_RGB565 := true
-TW_NO_SCREEN_TIMEOUT := true
-TW_EXTRA_LANGUAGES := false
-# TW_NO_FLASH_SPARK := true
-# # To remove later
-# TW_EXCLUDE_EXFAT := true
-# TW_EXCLUDE_NTFS := true
-# TW_NO_SDEXT_PARTITION := true
-TW_NO_SCREEN_BLANK := true
-TW_NO_USB_STORAGE := true
-TW_EXCLUDE_EMOJI := true
-TW_USE_COMPRESSION := false
-# TW_EXCLUDE_MTP := true
-TW_EXCLUDE_SUPERSU := true
-TW_NO_BATT_PERCENT := true
-# TW_INCLUDE_DUMLOCK := true #?
-TW_NO_CPU_TEMP := true
-TW_NO_HAPTICS := true
-TW_USE_MINUI := true
-TW_EXCLUDE_PYTHON := true
-TW_EXCLUDE_LPTOOLS := true
-TW_EXCLUDE_LPDUMP := true
-TW_EXCLUDE_NANO := true
-TW_EXCLUDE_BASH := true
-TW_EXCLUDE_PYTHON := true
-TW_EXCLUDE_TZDATA := true
-TW_EXCLUDE_TWRPAPP := true
-# TW_DISABLE_ADB := true
-# TW_DISABLE_FASTBOOT := true
-# TW_EXCLUDE_FILEMANAGER := true
-TW_EXCLUDE_TERMINAL := true
-# TW_EXCLUDE_PARTITIONMANAGER := true
-# LOCAL_STRIP_MODULE := true
-
-#Encryption remove (default?)
-TW_INCLUDE_CRYPTO := false
-TW_EXCLUDE_CRYPTO := true
-TW_EXCLUDE_FBE := true
+# Properties
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
