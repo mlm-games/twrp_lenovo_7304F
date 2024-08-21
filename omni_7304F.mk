@@ -16,7 +16,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, vendor/twrp/config/common.mk)
 
 # Inherit from 7304F device
-$(call inherit-product, device/lenovo/7304F/device.mk)
+# $(call inherit-product, device/lenovo/7304F/device.mk)
 
 PRODUCT_DEVICE := 7304F
 PRODUCT_NAME := omni_7304F
