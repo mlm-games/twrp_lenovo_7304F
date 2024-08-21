@@ -6,6 +6,8 @@
 # 
 
 # It is not system-as-root
+# lun path - /sys/bus/i2c/devices/i2c-0/device/driver/1100b000.i2c/subsystem/devices/soc/1000f000.pwrap/1000f000.pwrap:mt6392/mt6392-regulator/regulator/regulator.4/subsystem/regulator.14/musb-hdrc.0.auto-vusb/gadget/lun0/file
+# lun path - /sys/bus/i2c/devices/i2c-0/device/driver/1100b000.i2c/subsystem/devices/soc/1000f000.pwrap/1000f000.pwrap:mt6392/mt6392-regulator/regulator/regulator.5/subsystem/regulator.14/musb-hdrc.0.auto-vusb/gadget/lun0/file
 
 DEVICE_PATH := device/lenovo/7304F
 
@@ -102,6 +104,8 @@ TW_SCREEN_BLANK_ON_BOOT := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
 
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/bus/i2c/devices/i2c-0/device/driver/1100b000.i2c/subsystem/devices/soc/1000f000.pwrap/1000f000.pwrap:mt6392/mt6392-regulator/regulator/regulator.4/subsystem/regulator.14/musb-hdrc.0.auto-vusb/gadget/lun0/file
+
 # #Save space
 # TW_EXCLUDE_ENCRYPTED_BACKUPS := true
 # TW_EXCLUDE_APP_MANAGER := true
@@ -158,7 +162,7 @@ BOARD_FLASH_BLOCK_SIZE := 0
 BOARD_HAS_NO_REAL_SDCARD := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_SUPPRESS_SECURE_ERASE := true
-BOARD_HAS_NO_MISC_PARTITION := true
+# BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_RECOVERY_SWIPE := true
 BOARD_USES_MMCUTILS := true
 BOARD_SUPPRESS_EMMC_WIPE := true
