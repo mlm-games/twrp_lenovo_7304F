@@ -1,5 +1,5 @@
 # prebuilt kernel
-TARGET_PREBUILT_KERNEL := device/teclast/m89_p8x9/kernel
+TARGET_PREBUILT_KERNEL := device/teclast/7304F/kernel
 
 # Charger
 PRODUCT_PACKAGES += \

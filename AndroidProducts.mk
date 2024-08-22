@@ -1,2 +1,2 @@
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/m89_p8x9.mk
+    $(LOCAL_DIR)/7304F.mk
