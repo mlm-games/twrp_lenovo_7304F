@@ -1,0 +1,9 @@
+on boot
+
+# For starting recovery on 5.0 and newer
+service recovery /sbin/recovery
+    seclabel u:r:recovery:s0
+
+service touch_fix /sbin/touchfix.sh
+    seclabel u:r:recovery:s0
+    oneshot

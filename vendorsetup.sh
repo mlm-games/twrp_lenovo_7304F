@@ -1,10 +1,3 @@
-#
-# Copyright (C) 2024 The Android Open Source Project
-# Copyright (C) 2024 SebaUbuntu's TWRP device tree generator
-#
-# SPDX-License-Identifier: Apache-2.0
-#
 
-add_lunch_combo omni_7304F-user
-add_lunch_combo omni_7304F-userdebug
-add_lunch_combo omni_7304F-eng
+add_lunch_combo m89_p8x9-eng
+#add_lunch_combo cappu-eng
