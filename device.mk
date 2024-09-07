@@ -1,5 +1,5 @@
 # prebuilt kernel
-TARGET_PREBUILT_KERNEL := device/teclast/7304F/kernel
+TARGET_PREBUILT_KERNEL := device/lenovo/7304F/kernel
 
 # Charger
 PRODUCT_PACKAGES += \
