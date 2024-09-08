@@ -36,4 +36,4 @@ Others
 - https://xdaforums.com/t/mediatek-mt8173-mt8176-development.3791009/ (Main mt8176 and mt8173 development thread)
 - You can get the stock firmware from RSA/Software Fix application
 
-Check the other branches too for other stuff
+Check the other branches too for other stuff (like the 'archive' branch)
