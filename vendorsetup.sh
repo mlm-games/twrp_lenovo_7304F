@@ -1,3 +1,2 @@
 
-add_lunch_combo 7304F-eng
-#add_lunch_combo cappu-eng
+add_lunch_combo omni_7304F-eng
