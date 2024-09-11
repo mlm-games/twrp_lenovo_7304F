@@ -115,3 +115,6 @@ TW_BACKUP_DATA_MEDIA := true
 
 # Size
 TW_EXCLUDE_NANO := true
+
+# Might not boot due to this not being present?
+TW_SCREEN_BLANK_ON_BOOT := true
