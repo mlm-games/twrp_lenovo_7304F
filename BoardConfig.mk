@@ -31,13 +31,10 @@ TARGET_2ND_CPU_VARIANT_RUNTIME := generic
 
 # # Add back if it doesnt work
 # TARGET_IS_64_BIT := true 
-# TW_INCLUDE_FUSE_EXFAT := true  
-# TARGET_BOARD_SUFFIX := _64                    # Remove if the device is 32-bit
-# TARGET_USES_64_BIT_BINDER := true             # Remove if the device is 32-bit
-
-# # These two are for MTK Chipsets only
-# BOARD_USES_MTK_HARDWARE := true
-# BOARD_HAS_MTK_HARDWARE := true
+TW_INCLUDE_FUSE_EXFAT := true  
+TW_INCLUDE_FUSE_NTFS := true
+TARGET_BOARD_SUFFIX := _64                    # Remove if the device is 32-bit
+TARGET_USES_64_BIT_BINDER := true             # Remove if the device is 32-bit
 
 # APEX
 OVERRIDE_TARGET_FLATTEN_APEX := true
@@ -81,12 +78,20 @@ TARGET_COPY_OUT_VENDOR := vendor
 
 # Platform
 TARGET_BOARD_PLATFORM := mt8167
-# TARGET_NO_BOOTLOADER := true
-# TARGET_BOOTLOADER_BOARD_NAME :=      # ro.product.board doesnt have a value...
+
+# USB
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun/file
 
 # Recovery
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
+
+# MTK Hardware
+BOARD_USES_MTK_HARDWARE := true
+BOARD_HAS_MTK_HARDWARE := true
+MTK_HARDWARE := true
+BOARD_HAS_MTK := true
+MTK_HWC_CHIP := mt8167
 
 # Security patch level
 VENDOR_SECURITY_PATCH := 2021-08-01
@@ -102,7 +107,31 @@ TW_THEME := portrait_hdpi
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
+TW_FORCE_USE_BUSYBOX := true
 
+TW_CUSTOM_CPU_TEMP_PATH := /sys/devices/virtual/thermal/thermal_zone1/temp
+TW_EXCLUDE_SUPERSU := true
+TW_DEFAULT_EXTERNAL_STORAGE := true
+TW_DEFAULT_BRIGHTNESS := 90
+
+# Disable haptics
+TW_NO_HAPTICS := true
+
+# Logcat
+TWRP_INCLUDE_LOGCAT := true
+TARGET_USES_LOGD := true
+
+# crypto
+BOARD_SUPPRESS_SECURE_ERASE := true
+TW_INCLUDE_CRYPTO := true
+TW_INCLUDE_CRYPTO_OLD := true
+TW_CRYPTO_FS_TYPE := "ext4"
+TW_CRYPTO_MNT_POINT := "/data"
+TW_CRYPTO_FS_OPTIONS := "nosuid,nodev,noatime,discard,noauto_da_alloc,data=ordered"
+TW_CRYPTO_USE_SYSTEM_VOLD := true
+
+TW_IGNORE_MISC_WIPE_DATA := true
+TW_EXCLUDE_ENCRYPTED_BACKUPS := false
 # Add the below only if needed
 
 # TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/bus/i2c/devices/i2c-0/device/driver/1100b000.i2c/subsystem/devices/soc/1000f000.pwrap/1000f000.pwrap:mt6392/mt6392-regulator/regulator/regulator.4/subsystem/regulator.14/musb-hdrc.0.auto-vusb/gadget/lun0/file
@@ -132,13 +161,13 @@ TW_USE_TOOLBOX := true
 # # TW_NO_CPU_TEMP := true
 # # TW_NO_HAPTICS := true
 # # TW_USE_MINUI := true
-# # TW_EXCLUDE_LPTOOLS := true
-# # TW_EXCLUDE_LPDUMP := true
-# # TW_EXCLUDE_NANO := true
-# # TW_EXCLUDE_BASH := true
-# # TW_EXCLUDE_PYTHON := true
-# # TW_EXCLUDE_TZDATA := true
-# # TW_EXCLUDE_TWRPAPP := true
+TW_EXCLUDE_LPTOOLS := true
+TW_EXCLUDE_LPDUMP := true
+TW_EXCLUDE_NANO := true
+TW_EXCLUDE_BASH := true
+TW_EXCLUDE_PYTHON := true
+TW_EXCLUDE_TZDATA := true
+TW_EXCLUDE_TWRPAPP := true
 # # # TW_DISABLE_ADB := true
 # # # TW_DISABLE_FASTBOOT := true
 # # # TW_EXCLUDE_FILEMANAGER := true
