@@ -1,4 +1,4 @@
-/system          ext4     /dev/block/platform/bootdevice/by-name/system    /dev/block/platform/soc/11120000.mmc/by-name/system   flags=display="system"
+/system          ext4     /dev/block/platform/bootdevice/by-name/system    /dev/block/platform/soc/11120000.mmc/by-name/system   flags=display="system"fsflags="ro"
 /system_image    emmc     /dev/block/platform/bootdevice/by-name/system    /dev/block/platform/soc/11120000.mmc/by-name/system
 /data            ext4     /dev/block/platform/bootdevice/by-name/userdata  /dev/block/platform/soc/11120000.mmc/by-name/userdata   flags=display="data"
 /cache           ext4     /dev/block/platform/bootdevice/by-name/cache     /dev/block/platform/soc/11120000.mmc/by-name/cache   flags=display="cache";fsflags="noatime,nosuid,nodev"
