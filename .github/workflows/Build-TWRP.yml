@@ -84,3 +84,10 @@ jobs:
             MD5 (zip): ${{ env.MD5_ZIP }}
           prerelease: ${{ env.MARK_PRERELEASE }}
         continue-on-error: true
+
+      - name: Run LDCHECK
+        uses: mlm-games/ldcheck-action@main
+        with:
+          OUTPUT_DIR: ${{ env.OUTPUT_DIR }}
+          LDCHECKPATH: ''
+        continue-on-error: true
