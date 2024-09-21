@@ -65,6 +65,7 @@ jobs:
             ${{ env.OUTPUT_DIR }}/*.tar
             ${{ env.OUTPUT_DIR }}/*vbmeta*
             ${{ env.OUTPUT_DIR }}/*.cpio
+            
       - name: Upload to Release
         if: github.event_name == 'workflow_dispatch' && env.UPLOAD_RELEASES == 'true'
         uses: softprops/action-gh-release@v2
