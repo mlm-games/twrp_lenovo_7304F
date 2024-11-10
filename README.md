@@ -47,5 +47,4 @@ Some context: I also had the 7304I variant and i had tried to unlock the device 
 So long story short: Flash software from other fw sites like this [one for 7304F as an example](https://firmwareos.com/lenovo-tab-7-essential-tb-7304f) and do not use RSA's firmware for 7304I (do not know abt other devices.)
 **Edit: Kinda fixed it. I am going to leave it alone for now as the build is a test build (from lenovo) and my NVRAM doesn't work yet.**
 
-U could also root it temporarily using [mtk-easy-su](https://github.com/JunioJsv/mtk-easy-su)
-Maybe [this](https://github.com/bkerler/mtkclient/issues/785) fastboot command
+U could also root it temporarily using [mtk-easy-su](https://github.com/JunioJsv/mtk-easy-su) or maybe perma with [this](https://github.com/bkerler/mtkclient/issues/785) fastboot command
