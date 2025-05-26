@@ -2,7 +2,7 @@
 
 TWRP for Lenovo TB_7304F, currently does not work...
 
-For the very helpful links on how to unlock bootloader & rooting, check out [baejeogwan's readme](https://github.com/baejeongwan/twrp_device_lenovo_tb7304f)
+For the very helpful links on how to unlock bootloader & rooting, check out [baejeogwan's readme](https://github.com/baejeongwan/twrp_device_lenovo_tb7304f) (looks like it has been deleted and i didn't fork it unfortunately, for rooting, i think he had a video which used a custom modified mtkclient, maybe the support for 7304f was added by now idk, and for rooting, magisk patched boot image works albeit it does cause some random reboots with few added modules. As of performance, he had recommended using an AI app for optimising performance, i don't remember the name (it requires root). Will update it when i remember...)
 
 
 Currently I am stuck so will just be asking around xda or github if anyone else can help me fix it... It does boot forever sometimes and that kinda feels right as it doesnt bootloop and is only stuck on lenovo bootimage but i could be wrong (kernel doesn't panic -> no bootloop right?)
